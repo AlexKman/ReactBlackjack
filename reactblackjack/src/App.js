@@ -1,4 +1,5 @@
 import React from "react";
+import PlayingCard from "./PlayingCard/PlayingCard.js";
 
 import "./App.css";
 

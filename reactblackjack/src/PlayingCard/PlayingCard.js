@@ -5,9 +5,12 @@ const playingCard = ({ card, frontDisplay, clickCard }) => {
   return (
     <section className="playing-card" onClick={clickCard}>
       {frontDisplay === true ? (
-        <img src={require("./PlayingCardImages/" + card.toImageString())} />
+        <img
+          src={require("../Components/PlayingCardImages/" +
+            card.toImageString())}
+        />
       ) : (
-        <img src={require("./PlayingCardImages/backCard.png")} />
+        <img src={require("../Components/PlayingCardImages/backCard.png")} />
       )}
     </section>
   );
