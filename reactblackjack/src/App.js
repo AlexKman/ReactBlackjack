@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import PlayingCard from "./PlayingCard/PlayingCard.js";
-import CardDeck from "./deck/cardDeck.js";
-
 import "./App.css";
+import PlayingCard from "./PlayingCard/PlayingCard";
+import Deck from "./deck/cardDeck";
 
-class App extends React.Component {
+class App extends Component {
   state = {
     playerHand: [],
     dealerHand: [],
@@ -12,13 +11,30 @@ class App extends React.Component {
     gameOver: false
   };
 
-  dealCards = () => {
-    let cardDeck = cardDeck.dealCards(2);
+  componentDidMount() {
+    let playerHand = this.dealCards();
+    let dealerHand = this.dealCards();
+    dealerHand[0].shown = false;
+    this.setState({ playerHand, dealerHand });
+  }
 
-    return cardDeck;
+  dealCards = () => {
+    let deck = Deck.dealCards(2);
+
+    return deck;
   };
+
   render() {
-    return <h1>{this.cardDeck}</h1>;
+    let playerHand = this.state.playerHand.map((card, index) => (
+      <PlayingCard card={card.card} displayFront={card.shown} />
+    ));
+
+    return (
+      <div className="App">
+        <div className="hand">{playerHand}</div>
+        <button onClick={this.dealCards}>Deal Button</button>
+      </div>
+    );
   }
 }
 

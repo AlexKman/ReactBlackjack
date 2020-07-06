@@ -1,58 +1,60 @@
 import Card from "./card";
 
-class cardDeck {
-  static cardSuits = [
-    Card.cardSuits.clubs,
-    Card.cardSuits.hearts,
-    Card.cardSuits.diamonds,
-    Card.cardSuits.diamonds
+class Deck {
+  static suits = [
+    Card.suits.clubs,
+    Card.suits.hearts,
+    Card.suits.diamonds,
+    Card.suits.diamonds
   ];
 
   static dealCards(cardCount) {
     let cards = [];
+
     for (let i = 0; i < cardCount; i++) {
-      cards.push(cardDeck.dealSingleCard());
+      cards.push(Deck.dealSingleCard());
     }
+
     return cards;
   }
 
-  static dealOneCard() {
-    let value = Math.floor(Math.random() * 13) + 1;
-    let cardSuit = Math.floor(Math.random() * 4);
-    return { shown: true, card: new Card(cardDeck.suits[cardSuit], value) };
+  static dealSingleCard() {
+    let val = Math.floor(Math.random() * 13) + 1;
+    let suit = Math.floor(Math.random() * 4);
+    return { shown: true, card: new Card(Deck.suits[suit], val) };
   }
 
-  static calculateHandTotal = (cards, aces) => {
+  static calculateHandTotal = (cards, ace) => {
     let sum = 0;
 
-    if (typeof aces === "undefined") {
-      aces = 1;
+    if (typeof ace === "undefined") {
+      ace = 1;
     }
 
-    let hasFoundAce = false;
+    let foundAce = false;
     let blackJack = false;
 
     for (let i = 0; i < cards.length; i++) {
       let card = cards[i].card;
 
-      if (!hasFoundAce && cards.length === 2 && card.value === 1) {
-        hasFoundAce = true;
+      if (!foundAce && cards.length === 2 && card.value === 1) {
+        foundAce = true;
       }
 
-      //Check if blackjack is true
-      if (hasFoundAce && card.value >= 11) {
+      //check for black jack
+      if (foundAce && card.value > 10) {
         blackJack = true;
       } else {
-        if (card.value >= 11) {
-          sum += 10;
+        if (card.value > 10) {
+          sum += 10; // all face cards are worth 10
         } else if (card.value === 1) {
-          sum += aces;
+          sum += ace;
         } else {
           sum += card.value;
         }
       }
     }
-    if (blackJack === true) {
+    if (blackJack) {
       sum = 21;
     }
 
@@ -60,4 +62,4 @@ class cardDeck {
   };
 }
 
-export default cardDeck;
+export default Deck;
