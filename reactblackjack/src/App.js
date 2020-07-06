@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PlayingCard from "./PlayingCard/PlayingCard.js";
+import CardDeck from "./deck/cardDeck.js";
 
 import "./App.css";
 

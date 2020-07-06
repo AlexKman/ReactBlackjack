@@ -18,11 +18,11 @@ class Card {
     // Logic behind the face card for the honor cards (Jacks, Queens and Kings)
     let cardFace = "";
     if (this.cardValue === 11) {
-      face = "J";
+      cardFace = "J";
     } else if (this.cardValue === 12) {
-      face = "Q";
+      cardFace = "Q";
     } else if (this.cardValue === 13) {
-      face = "K";
+      cardFace = "K";
     } else {
       console.log("default happened " + this.cardValue);
     }
