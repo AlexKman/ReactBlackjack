@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
-import PlayingCard from "./PlayingCard/PlayingCard";
-import Deck from "./deck/Deck";
-import HandValue from "./handValue/handValue";
+import PlayingCard from "./components/PlayingCard/PlayingCard.js";
+import Deck from "./components/deck/Deck";
+import HandValue from "./components/handValue/handValue";
 
 class App extends Component {
   state = {
@@ -69,11 +69,7 @@ class App extends Component {
     ));
 
     let dealerHand = this.state.dealerHand.map((card, index) => (
-      <PlayingCard
-        card={card.card}
-        displayFront={card.shown}
-        // clickCard={() => this.clickCard(index)}
-      />
+      <PlayingCard card={card.card} displayFront={card.shown} />
     ));
 
     let playerTotal = Deck.calculateHandTotal(this.state.playerHand);
@@ -98,7 +94,7 @@ class App extends Component {
             </h2>
           )
         ) : (
-          <h2>Make a choice</h2>
+          <h2></h2>
         )}
 
         {playerTotal >= 22 ? (

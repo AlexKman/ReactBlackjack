@@ -11,12 +11,12 @@ class Card {
       return `${this.value}${this.suit.charAt(0).toUpperCase()}.png`;
     }
 
-    // Aces
+    // Logic in case of Aces
     if (this.value === 1) {
       return `A${this.suit.charAt(0).toUpperCase()}.png`;
     }
 
-    // Face cards
+    // All face cards (jacks, queens, kings)
     let face = "";
     if (this.value === 11) {
       face = "J";
@@ -39,5 +39,3 @@ Card.suits = {
 };
 
 export default Card;
-
-// module.exports = Card;
