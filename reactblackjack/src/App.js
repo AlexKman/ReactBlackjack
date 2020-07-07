@@ -101,7 +101,7 @@ class App extends Component {
         )}
 
         {playerTotal > 21 ? (
-          <h2>Bust!</h2>
+          <h1>You are Bust!</h1>
         ) : (
           this.state.gameOver === false && (
             <div className="player-buttons">
