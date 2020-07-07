@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
 import PlayingCard from "./PlayingCard/PlayingCard";
-import Deck from "./deck/cardDeck.js";
-import HandValue from "./handValue.js";
+import Deck from "./deck/Deck";
+import HandValue from "./handValue/handValue";
 
 class App extends Component {
   state = {
