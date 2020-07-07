@@ -24,8 +24,6 @@ class Card {
       face = "Q";
     } else if (this.value === 13) {
       face = "K";
-    } else {
-      console.log("default happened " + this.value);
     }
     return `${face}${this.suit.charAt(0).toUpperCase()}.png`;
   }

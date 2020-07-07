@@ -41,12 +41,12 @@ class Deck {
         foundAce = true;
       }
 
-      //check for black jack
+      // Checks for blackjack scenario
       if (foundAce && card.value > 10) {
         blackJack = true;
       } else {
         if (card.value > 10) {
-          sum += 10; // all face cards are worth 10
+          sum += 10; // All face cards (jacks, queens, kings) have a value of 10
         } else if (card.value === 1) {
           sum += ace;
         } else {

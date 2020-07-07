@@ -94,7 +94,7 @@ class App extends Component {
             </h2>
           )
         ) : (
-          <h2></h2>
+          <h1>Hit or Stay?</h1>
         )}
 
         {playerTotal >= 22 ? (
