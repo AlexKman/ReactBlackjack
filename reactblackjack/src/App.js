@@ -89,7 +89,8 @@ class App extends Component {
         {this.state.gameOver ? (
           this.state.gameWon ? (
             <h2>
-              You Win! You have {playerTotal}, dealer has {dealerTotal}.
+              You have won! You have {playerTotal}, the dealer has {dealerTotal}
+              .
             </h2>
           ) : (
             <h2>
@@ -100,7 +101,7 @@ class App extends Component {
           <h2>Make a choice</h2>
         )}
 
-        {playerTotal > 21 ? (
+        {playerTotal >= 22 ? (
           <h1>You are Bust!</h1>
         ) : (
           this.state.gameOver === false && (
