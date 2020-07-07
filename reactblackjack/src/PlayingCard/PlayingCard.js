@@ -1,18 +1,16 @@
 import React from "react";
+import "./PlayingCard.css";
 
-const playingCard = ({ card, frontDisplay, clickCard }) => {
+const playingCard = ({card, displayFront, clickCard }) => {
   console.log(card.toImageString());
   return (
-    <section className="playing-card" onClick={clickCard}>
-      {frontDisplay === true ? (
-        <img
-          src={require("../Components/PlayingCardImages/" +
-            card.toImageString())}
-        />
+    <div className="playing-card" onClick={clickCard}>
+      {displayFront === true ? (
+        <img className="card-image" src={require('./images/' + card.toImageString())} />
       ) : (
-        <img src={require("../Components/PlayingCardImages/backCard.png")} />
+        <img className="card-image" src={require("./images/green_back.png")} />
       )}
-    </section>
+    </div>
   );
 };
 
