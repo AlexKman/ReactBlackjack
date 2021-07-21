@@ -4,13 +4,18 @@ import "./PlayingCard.css";
 const playingCard = ({ card, displayFront, clickCard }) => {
   return (
     <div className="playing-card" onClick={clickCard}>
-      {displayFront != false ? (
+      {displayFront !== false ? (
         <img
+          alt="CardImage"
           className="card-image"
           src={require("./images/" + card.toImageString())}
         />
       ) : (
-        <img className="card-image" src={require("./images/green_back.png")} />
+        <img
+          alt="CardImage"
+          className="card-image"
+          src={require("./images/green_back.png")}
+        />
       )}
     </div>
   );
