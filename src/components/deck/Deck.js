@@ -5,7 +5,7 @@ class Deck {
     Card.suits.clubs,
     Card.suits.hearts,
     Card.suits.diamonds,
-    Card.suits.diamonds
+    Card.suits.spades,
   ];
 
   static dealCards(cardCount) {
