@@ -10,4 +10,3 @@ Resources used within this repository:
 2. http://acbl.mybigcommerce.com/52-playing-cards/
 3. https://reactjs.org/
 4. https://reactjs.org/docs/state-and-lifecycle.html
-5.
