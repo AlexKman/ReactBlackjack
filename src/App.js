@@ -9,7 +9,7 @@ class App extends Component {
     playerHand: [],
     dealerHand: [],
     gameWon: false,
-    gameOver: false
+    gameOver: false,
   };
 
   componentDidMount() {
@@ -94,11 +94,11 @@ class App extends Component {
             </h2>
           )
         ) : (
-          <h1>Hit or Stay?</h1>
+          <h1 id="win-headers"></h1>
         )}
 
         {playerTotal >= 22 ? (
-          <h1>You are Bust!</h1>
+          <h1 id="win-headers">You are Bust!</h1>
         ) : (
           this.state.gameOver === false && (
             <div className="player-buttons">
