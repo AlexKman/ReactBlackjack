@@ -15,11 +15,6 @@ body {
   width: 100%;
 }
 
-.hand {
-  border: solid 0.2em white;
-  padding: 0.6em;
-}
-
 button {
   font-size: 2.5rem;
   margin: 1rem;
