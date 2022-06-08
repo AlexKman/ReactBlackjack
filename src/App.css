@@ -30,8 +30,15 @@ button {
   font-family: "Casino Flat", sans-serif;
 }
 
-#win-headers {
-  padding: 0.6em;
+.win-headers {
+  font-size: 2.5rem;
+  margin: 1rem;
+  color: white;
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: Transparent;
+  border: none;
+  font-family: "Casino Flat", sans-serif;
 }
 
 button:hover {

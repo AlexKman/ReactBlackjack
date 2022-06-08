@@ -84,21 +84,21 @@ class App extends Component {
 
         {this.state.gameOver ? (
           this.state.gameWon ? (
-            <h2>
+            <h1 className="win-headers">
               You have won! You have {playerTotal}, the dealer has {dealerTotal}
               .
-            </h2>
+            </h1>
           ) : (
-            <h2>
+            <h1 className="win-headers">
               Sorry, you lost. Dealer has {dealerTotal}, you have {playerTotal}.{" "}
-            </h2>
+            </h1>
           )
         ) : (
-          <h1 id="win-headers"></h1>
+          <h1></h1>
         )}
 
         {playerTotal >= 22 ? (
-          <h1 id="win-headers">You are Bust!</h1>
+          <h1 className="win-headers">You are Bust!</h1>
         ) : (
           this.state.gameOver === false && (
             <div className="player-buttons">
