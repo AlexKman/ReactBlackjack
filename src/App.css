@@ -38,8 +38,9 @@ button {
   cursor: pointer;
   background-color: Transparent;
   border: none;
+  font-family: "Casino Flat", sans-serif;
 }
 
 button:hover {
-  font-style: italic;
+  text-shadow: 0 -0.2em 0.2em #000, 0 0;
 }
